@@ -1,6 +1,6 @@
 ### compile the tomcat-8.5.8 resource and import into eclipse
 
-- instal the ant
+- install the ant
 - download the tomcat resource form the  [Apache Tomcat Home](http://archive.apache.org/dist/tomcat/tomcat-8/v8.5.8/src/)
 - open your cmd terminal, and uppackage the apache-tomcat-8.5.8-src.zip , then cd apache-tomcat-8.5.8-src folder,mv "build.properties.default" "build.properties", open the build.properties and set the base.path property, the value is where you want to save the something will be downloaded when you compile the tomcat code. then execute the commond "ant" to compile your tomcat resource(in "apache-tomcat-8.5.8-src") directory. and you'll see a lot of logs bilibili..., if you see the "BUILD SUCCESSFUL" at the end, congratulations!
 - now you'll see two new folders, they are "output"、"tomcat-build-libs",the first is major, the second is what you set in previous step, i haven't use it anyhow...
