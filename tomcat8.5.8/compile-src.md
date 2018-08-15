@@ -1,11 +1,11 @@
 ### compile the tomcat-8.5.8 resource and import into eclipse
 
-- install the ant
+- install ant
 - download the tomcat resource form the  [Apache Tomcat Home](http://archive.apache.org/dist/tomcat/tomcat-8/v8.5.8/src/)
-- open your cmd terminal, and uppackage the apache-tomcat-8.5.8-src.zip , then cd apache-tomcat-8.5.8-src folder,mv "build.properties.default" "build.properties", open the build.properties and set the base.path property, the value is where you want to save the something will be downloaded when you compile the tomcat code. then execute the commond "ant" to compile your tomcat resource(in "apache-tomcat-8.5.8-src") directory. and you'll see a lot of logs bilibili..., if you see the "BUILD SUCCESSFUL" at the end, congratulations!
-- now you'll see two new folders, they are "output"、"tomcat-build-libs",the first is major, the second is what you set in previous step, i haven't use it anyhow...
-- create a maven project in your ide named what you want, copy the "jave" and "test" folders into your new project, then a lot of errors will occur, "don't worry, be happy", you must understand my words if you play dota...
-- then you'll known why we create a maven project, copy the following dependencies into your pom.xml
+- open your cmd terminal, and uppackage the apache-tomcat-8.5.8-src.zip , then cd apache-tomcat-8.5.8-src folder,mv "build.properties.default" "build.properties", open the build.properties and set the base.path property, the value is where you want to save something downloaded when you compile the tomcat code. then execute the commond "ant" to compile your tomcat resource(in "apache-tomcat-8.5.8-src") directory. and you could see a lot of logs bilibili..., if the "BUILD SUCCESSFUL" displayed at the end, congratulations!
+- now you could find two new folders, they are "output"、"tomcat-build-libs",the first is major, the second is what you set in previous step, i haven't use it anyhow...
+- create a maven project in your ide, copy the "jave" and "test" folders into your new project, then a lot of errors will occur, don't worry, be happy.
+- copy the following dependencies into your pom.xml
 ```xml
 <dependencies>
 		<dependency>
@@ -42,7 +42,7 @@
 		</dependency>
 	</dependencies>
 ```
-- now most of the errors have been resolved, don't happy too early, you'll find the CookieFilter.java is a missing class in your project, all i can say, copy、copy and copy
+- now, most of the errors have been resolved, but you could find the CookieFilter.java is a missing class in your project, copy this.
 
 ```java
 /*
@@ -130,5 +130,5 @@ public class CookieFilter {
     }
 }
 ```
-- ensure all of the code errors have been resolved, let't build the project like tomcat. copy the "apache-tomcat-8.5.8-src/webapps"、"apache-tomcat-8.5.8-src/output/build/lib"、"apache-tomcat-8.5.8-src/output/build/conf" into your project's root directory.
-- the great task has been completed. run the org.apache.catalina.startup.Bootstrap.main, open your brower, access the address "http://localhost:8080", hope you can meet the tom cat =_=.
+- ensure all of the code errors have been resolved, let't build a tomcat project. copy the "apache-tomcat-8.5.8-src/webapps"、"apache-tomcat-8.5.8-src/output/build/lib"、"apache-tomcat-8.5.8-src/output/build/conf" into your project's root directory.
+- the great task has been completed. run the org.apache.catalina.startup.Bootstrap.main, open your brower, access the address "http://localhost:8080", hope you can see tom =_=.
